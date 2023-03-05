@@ -55,3 +55,11 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'shoulda-matchers'
+  gem 'webmock'
+  gem 'vcr'
+end
+
