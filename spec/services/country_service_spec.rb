@@ -14,9 +14,10 @@ RSpec.describe 'Country Service' do
     
     
     country = CountryService.random_country
-    
-    expect(country).to be_a(String)
-    expect(country).to_not be_a(Hash)
+    expect(country).to be_a(Hash)
+    expect(country.dig(:name, :common)).to be_a(String)
+    expect(country[:capital].first).to be_a(String)
+    expect(country.dig(:capitalInfo, :latlng)).to be_an(Array)
   end
   
   it 'can return coordinates for a capital city' do
@@ -32,10 +33,9 @@ RSpec.describe 'Country Service' do
          
     country = CountryService.country("Monaco").first
     
-    binding.pry
-    
-    expect(country[:name]).to eq("Monaco")
-    expect(country[:capitalInfo]).to eq()
+    expect(country.dig(:name, :common)).to eq("Monaco")
+    expect(country[:capital].first).to eq("Monaco")
+    expect(country.dig(:capitalInfo, :latlng)).to eq([43.73, 7.42])
   end
 end
 
