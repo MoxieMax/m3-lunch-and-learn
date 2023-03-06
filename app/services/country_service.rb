@@ -14,7 +14,7 @@ class CountryService
   
   def self.random_country
     rando = self.get_countries.sample
-    rando.dig(:name, :common)
+    rando.dig(:name, :common) #.downcase #might be necessary if all countries are downcased in the api
   end
   
 end
