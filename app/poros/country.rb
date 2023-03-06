@@ -12,7 +12,6 @@ class Country
     @cap_coord = data.dig(:capitalInfo, :latlng)
     @cap_lat = data.dig(:capitalInfo, :latlng).first
     @cap_lng = data.dig(:capitalInfo, :latlng).last
-    # binding.pry
   end
   
   # def initialize(data)
