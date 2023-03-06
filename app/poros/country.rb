@@ -5,5 +5,9 @@ class Country
   def initialize(name)
     @name = name
   end
+  
+  # def initialize(data)
+  #   @name = data[:name]
+  # end
 end
 

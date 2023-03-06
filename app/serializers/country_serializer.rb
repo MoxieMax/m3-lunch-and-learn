@@ -1,12 +1,5 @@
 class CountrySerializer
-  def self.country_information(country)
-    {
-      "data": country.map do |country|
-        {
-          binding.pry
-          "common": country[:common]
-        }
-    }
-  end
+  include JSONAPI::Serializer
+  attributes :name, :common, :capital, :capitalInfo, :latlng
   
 end

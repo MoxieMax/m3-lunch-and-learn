@@ -21,12 +21,12 @@ class CountryService
     response = conn.get("https://restcountries.com/v3.1/name/#{name}")
     info = parse(response)
     
-    binding.pry
+    # binding.pry
   end
   
   def self.capital_city_coord(country)
-    info.first.dig(:capitalInfo, :latlng)
-=> [43.73, 7.42]
+#     info.first.dig(:capitalInfo, :latlng)
+# => [43.73, 7.42]
     binding.pry
   end
   

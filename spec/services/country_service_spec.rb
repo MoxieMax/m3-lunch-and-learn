@@ -30,11 +30,12 @@ RSpec.describe 'Country Service' do
            }).
          to_return(status: 200, body: json_response, headers: {})
          
-    country = CountryService.country("Monaco")
+    country = CountryService.country("Monaco").first
     
     binding.pry
     
-    expect(country.name).to eq("Monaco")
+    expect(country[:name]).to eq("Monaco")
+    expect(country[:capitalInfo]).to eq()
   end
 end
 
